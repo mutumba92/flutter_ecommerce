@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_ecommerce/models/cart.dart';
 import 'package:flutter_ecommerce/pages/homepage.dart';
 import 'package:flutter_ecommerce/pages/splash_screen.dart';
 import 'package:flutter_ecommerce/pages/terms_conditions.dart';
+import 'package:provider/provider.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,8 +16,11 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return ChangeNotifierProvider(
+      create: (context) => Cart(),
+      builder: (context, child) => MaterialApp(
       title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -34,10 +39,13 @@ class MyApp extends StatelessWidget {
         // tested with just a hot reload.
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
+        
       ),
-      home: const SplashScreen(),
+      home: const Starter(),
+    )
+  ,
     );
-  }
+    }
 }
 
 class Starter extends StatelessWidget {
@@ -67,8 +75,7 @@ class Starter extends StatelessWidget {
                 ),
                 decoration: BoxDecoration(
                   color: Colors.black, 
-                  borderRadius: BorderRadius.circular(8.0)
-                  
+                  borderRadius: BorderRadius.circular(8.0) 
                 ),
               ),
             )

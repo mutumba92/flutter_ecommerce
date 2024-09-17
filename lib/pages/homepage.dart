@@ -44,7 +44,35 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: Colors.transparent,
         leading: Builder(builder: (context)=> IconButton(onPressed: (){
           Scaffold.of(context).openDrawer();
-        }, icon: Icon(Icons.menu), color: Colors.black,)),
+        }, icon: Icon(Icons.menu), color: Colors.black,
+        
+        )),
+        
+      ),
+      drawer: Drawer(
+        backgroundColor: Colors.black,
+        child: Column(children: [
+          DrawerHeader(child: Image.asset("assets/images/nike.png",)),
+          const Padding(
+            padding: EdgeInsets.all(18.0),
+            child: ListTile(
+              leading: Icon(Icons.home, color: Colors.white), title: Text("Home", style: TextStyle(color: Colors.white),),
+            ),
+          ),
+          const Padding(
+            padding: EdgeInsets.all(18.0),
+            child: ListTile(
+              leading: Icon(Icons.info_outlined, color: Colors.white), title: Text("About", style: TextStyle(color: Colors.white),),
+            ),
+          ),
+          const Padding(
+            padding: EdgeInsets.all(18.0),
+            child: ListTile(
+              leading: Icon(Icons.logout_rounded, color: Colors.white), title: Text("Log Out", style: TextStyle(color: Colors.white),),
+            ),
+          )
+         
+        ],),
       ),
       backgroundColor: Colors.grey[300],
       bottomNavigationBar: MyBottomNav(

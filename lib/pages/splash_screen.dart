@@ -12,26 +12,28 @@ class SplashScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-        child: AnimatedSplashScreen(splash: 
-        
-          Column(
-            children: [
-              Center(
-                child: Column(
-                  children: [
-                    LottieBuilder.asset("assets/Animation - 1726213349677.json"),
-                    Text("Welcome To Giant Panda", style: TextStyle(fontWeight: FontWeight.bold),)
-                  ],
-                ),
-              )
-            ],
-          )
-        , nextScreen: TermsAnConditions(),
-        splashIconSize: 500,
-        
-        ),
-
+    return Center(
+      child: Container(
+          child: AnimatedSplashScreen(splash: 
+          
+            Column(
+              children: [
+                Center(
+                  child: Column(
+                    children: [
+                      LottieBuilder.asset("assets/Animation - 1726213349677.json"),
+                      Text("Welcome To Giant Panda", style: TextStyle(fontWeight: FontWeight.bold),)
+                    ],
+                  ),
+                )
+              ],
+            )
+          , nextScreen: TermsAnConditions(),
+          splashIconSize: 500,
+          
+          ),
+      
+      ),
     );
   }
 }
